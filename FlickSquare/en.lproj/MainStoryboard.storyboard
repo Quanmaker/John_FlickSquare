@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="HMv-pE-7bw">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="ddw-4J-bDE">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="HMv-pE-7bw" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PGk-oz-RVB">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="t74-QM-7T8" kind="relationship" relationship="rootViewController" id="URw-N9-et1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d8Z-Zr-IkV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-441" y="7"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Xaz-SU-67p">
+            <objects>
+                <viewController id="t74-QM-7T8" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2BI-77-LYs">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wjW-zM-gzr">
+                                <connections>
+                                    <outlet property="delegate" destination="t74-QM-7T8" id="Js2-fI-gSI"/>
+                                </connections>
+                            </mapView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="thC-TL-srT"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wjW-zM-gzr" firstAttribute="top" secondItem="2BI-77-LYs" secondAttribute="top" type="default" id="CzC-NG-MKe"/>
+                            <constraint firstItem="wjW-zM-gzr" firstAttribute="bottom" secondItem="2BI-77-LYs" secondAttribute="bottom" type="default" id="EqK-5e-l1j"/>
+                            <constraint firstItem="wjW-zM-gzr" firstAttribute="leading" secondItem="2BI-77-LYs" secondAttribute="leading" type="default" id="OME-kI-2oE"/>
+                            <constraint firstItem="wjW-zM-gzr" firstAttribute="trailing" secondItem="2BI-77-LYs" secondAttribute="trailing" type="default" id="t0v-wT-dNC"/>
+                            <constraint firstItem="thC-TL-srT" firstAttribute="top" secondItem="2BI-77-LYs" secondAttribute="top" constant="197" id="v0F-H6-6kx"/>
+                            <constraint firstItem="thC-TL-srT" firstAttribute="centerX" secondItem="wjW-zM-gzr" secondAttribute="centerX" type="default" id="xRm-AI-GdI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="sCF-YX-66J"/>
+                    <connections>
+                        <outlet property="_mapView" destination="wjW-zM-gzr" id="DhH-OK-u2X"/>
+                        <outlet property="activityIndicator" destination="thC-TL-srT" id="ma2-dt-Nly"/>
+                        <segue destination="uWu-jR-T2r" kind="push" identifier="mapToDetail" id="meZ-se-yPe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CY9-Up-1mZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-38" y="7"/>
+        </scene>
+        <!--Detail View Controller - Title-->
+        <scene sceneID="XNh-ea-Wby">
+            <objects>
+                <viewController id="uWu-jR-T2r" customClass="DetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XsT-bN-Ncj">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s8R-i3-ZcC">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="sg1-BP-qIo"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PGy-qx-MeZ">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="258" id="e5b-F5-ULZ"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PGy-qx-MeZ" firstAttribute="leading" secondItem="XsT-bN-Ncj" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="JCh-2i-AKn"/>
+                            <constraint firstAttribute="trailing" secondItem="PGy-qx-MeZ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Qou-QQ-qwD"/>
+                            <constraint firstItem="s8R-i3-ZcC" firstAttribute="top" secondItem="XsT-bN-Ncj" secondAttribute="top" constant="20" symbolic="YES" type="default" id="R6F-zk-PKr"/>
+                            <constraint firstAttribute="bottom" secondItem="PGy-qx-MeZ" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="bpS-Ie-bYK"/>
+                            <constraint firstItem="s8R-i3-ZcC" firstAttribute="leading" secondItem="XsT-bN-Ncj" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="kZZ-Ks-YYT"/>
+                            <constraint firstAttribute="trailing" secondItem="s8R-i3-ZcC" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ohp-uO-Pgy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="Sb2-aN-HYi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lil-qP-b0B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="379" y="16"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
